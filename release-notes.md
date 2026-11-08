@@ -7,6 +7,8 @@
 
 ### ⚠ BREAKING CHANGES
 
+* Strict clients that cached the previous full inspect_address_context output schema must refresh tools/list and accept the typed error field on unavailable facets.
+* **ghidra:** qualify memory effect coverage ([#8651](https://github.com/attydenis/rea/issues/8651))
 * **ghidra:** Byte search results require skipped_overlays; loaded overlays no longer appear in skipped_not_loaded. The Ghidra profile changes so prior snapshots are not replayed.
 * **ghidra:** identify containing code and data ([#8777](https://github.com/attydenis/rea/issues/8777))
 * **native:** recognize identical function evidence ([#8442](https://github.com/attydenis/rea/issues/8442))
@@ -156,6 +158,7 @@
 * **rizin:** select the decoder and map address for one-shot commands ([#8991](https://github.com/attydenis/rea/issues/8991)) ([81f9f71](https://github.com/attydenis/rea/commit/81f9f71f6d7d564456381bf7c7d278f0335ea31b))
 * **setup:** register LM Studio during setup ([#8611](https://github.com/attydenis/rea/issues/8611)) ([398eb0d](https://github.com/attydenis/rea/commit/398eb0d1f16b410b64a96615c6463fbf2ab2f38d))
 * **setup:** support CodeBuddy as a setup client ([#2492](https://github.com/attydenis/rea/issues/2492)) ([fb841a9](https://github.com/attydenis/rea/commit/fb841a9596f5195f52f1946a2ee42e109c30cdaf))
+* **skills:** build a computer-app environment from a request ([#9049](https://github.com/attydenis/rea/issues/9049)) ([03a3fcb](https://github.com/attydenis/rea/commit/03a3fcbcea87d6cb7485bffaee77d0338a0ab635))
 * **web:** page retained bundle endpoint observations and inferences ([#7259](https://github.com/attydenis/rea/issues/7259)) ([6d5532a](https://github.com/attydenis/rea/commit/6d5532a204b338a6c770fcbae61e0d55bda70793))
 * **website:** publish agent discovery and Markdown responses ([eef8f44](https://github.com/attydenis/rea/commit/eef8f44003e6bf781baf4f885f84d03b31ea6c3a))
 * **workflows:** expose guided prompts through CLI and MCP ([#6995](https://github.com/attydenis/rea/issues/6995)) ([5ae7765](https://github.com/attydenis/rea/commit/5ae77656e7c4b9c40e84566a445660af34a23ad4))
@@ -306,12 +309,14 @@
 * **ci:** align tests with current evidence contracts ([ec34109](https://github.com/attydenis/rea/commit/ec3410998b70290847f930538e57d0af0ac1bffb))
 * **ci:** await website worker tests and format Wrangler config ([9ebbe67](https://github.com/attydenis/rea/commit/9ebbe67e05af08b567e215340da993c08dae378f))
 * **ci:** consolidate shared timer limit export ([ebfef27](https://github.com/attydenis/rea/commit/ebfef27b4682ed6ed47843bad641a6200bc1942b))
+* **ci:** consume owned command failure output in verifiers ([#9334](https://github.com/attydenis/rea/issues/9334)) ([c818ca9](https://github.com/attydenis/rea/commit/c818ca9042dae02a8e572c546aa95ee5767a26fc))
 * **ci:** enforce architecture guards before dependency setup ([#8027](https://github.com/attydenis/rea/issues/8027)) ([cac6e06](https://github.com/attydenis/rea/commit/cac6e0613e314238999ce4cc0249107ae936e8d3))
 * **ci:** include hidden VitePress configuration in CodeQL ([#8486](https://github.com/attydenis/rea/issues/8486)) ([e5e0dc5](https://github.com/attydenis/rea/commit/e5e0dc5542f6a63b790881ac906dc9fcd6d46659))
 * **ci:** own source-map captures and honor browser startup budget ([9031adf](https://github.com/attydenis/rea/commit/9031adf0b06cd2f02f4ef813d2e97a51375c3dad))
 * **ci:** preserve lint diagnostics without source locations ([b45a833](https://github.com/attydenis/rea/commit/b45a83368c11d02b9ed2acfeb04a19cac747b611))
 * **ci:** preserve release proposal overflow notes ([2cb2969](https://github.com/attydenis/rea/commit/2cb29693c3d574c4898832047fe309ac1ad00e9d))
 * **ci:** preserve the package verifier HTTP boundary ([#8483](https://github.com/attydenis/rea/issues/8483)) ([7174635](https://github.com/attydenis/rea/commit/71746351d322c847cb6b8bc8e1b21e80491a878e))
+* **ci:** register standalone function bundle verifier ([#9332](https://github.com/attydenis/rea/issues/9332)) ([2ac8578](https://github.com/attydenis/rea/commit/2ac85788271f8650da0b46d680a41c06e197cde2))
 * **ci:** remove undeclared dependency and handle PTY chunks ([3c05b4d](https://github.com/attydenis/rea/commit/3c05b4d3fef94eb91c966ecd675ff97fef3e364e))
 * **ci:** remove unused exports that fail deep static checks ([#8095](https://github.com/attydenis/rea/issues/8095)) ([6b68fb6](https://github.com/attydenis/rea/commit/6b68fb642a62f42e4e5359717e7f2f80b7938c63))
 * **ci:** repair native fixture and unused export ([429355c](https://github.com/attydenis/rea/commit/429355ca4d1078579fca7d286de85c512bed0a96))
@@ -405,6 +410,7 @@
 * **decompile:** retain inventory limitations and selection ([#8466](https://github.com/attydenis/rea/issues/8466)) ([fc20aeb](https://github.com/attydenis/rea/commit/fc20aebb94e16cc9976b5733731eca9e11ed7830))
 * **decompile:** retain limitations across failed resume ([#7913](https://github.com/attydenis/rea/issues/7913)) ([5082b50](https://github.com/attydenis/rea/commit/5082b50f074e2f3e1ba5534d119ae16566673a36))
 * **deps:** patch fast-uri, qs and HTTP/3 certifi ([#7704](https://github.com/attydenis/rea/issues/7704)) ([e556134](https://github.com/attydenis/rea/commit/e556134302f055936c0295838d72ebcd5454bc96)), closes [#7700](https://github.com/attydenis/rea/issues/7700)
+* **deps:** patch Vite and isolate ASAR tooling ([#9374](https://github.com/attydenis/rea/issues/9374)) ([08637b0](https://github.com/attydenis/rea/commit/08637b0c24b98ac9b32b925f1237aff57cabe601))
 * **deps:** upgrade zod without narrowing timestamp inputs ([e3066c1](https://github.com/attydenis/rea/commit/e3066c1705316b53b08f84814ae929eb6563e511))
 * **desktop:** align exported XML formatting whitespace ([#9020](https://github.com/attydenis/rea/issues/9020)) ([d774422](https://github.com/attydenis/rea/commit/d77442228d769ba20d7006bf4befea3a4c2f06d9))
 * **desktop:** bound exported task array-index conversion ([#9139](https://github.com/attydenis/rea/issues/9139)) ([ee2f5b9](https://github.com/attydenis/rea/commit/ee2f5b965a7b5cb0036444330d89fa32302f7845))
@@ -553,6 +559,7 @@
 * **ghidra:** preserve configured seed path traversal ([01d6a95](https://github.com/attydenis/rea/commit/01d6a95fd7df6065562b8f087082f5d2062cb468))
 * **ghidra:** preserve facts in inventory searches ([#8376](https://github.com/attydenis/rea/issues/8376)) ([c06b536](https://github.com/attydenis/rea/commit/c06b53644bbd85b19f91b98a8d218f641976b0b0))
 * **ghidra:** preserve project access failures ([6979c58](https://github.com/attydenis/rea/commit/6979c589b06dcef6525e125c2c61ea2735715285))
+* **ghidra:** qualify memory effect coverage ([#8651](https://github.com/attydenis/rea/issues/8651)) ([c5ed046](https://github.com/attydenis/rea/commit/c5ed046d6e7000b27a12c01a1444f28cc1651c4a))
 * **ghidra:** qualify selected project call coverage ([#8391](https://github.com/attydenis/rea/issues/8391)) ([1a0e2c7](https://github.com/attydenis/rea/commit/1a0e2c77f208bfb8d102dc68d75af3cc6f1a5a75))
 * **ghidra:** reject uncommitted handshake reports before the first query ([#8630](https://github.com/attydenis/rea/issues/8630)) ([aba56df](https://github.com/attydenis/rea/commit/aba56df689380f5bcd66e4858b778ba1e3115e90)), closes [#8612](https://github.com/attydenis/rea/issues/8612)
 * **ghidra:** report a missing existing-project program as a configuration error ([#8222](https://github.com/attydenis/rea/issues/8222)) ([1dc97d8](https://github.com/attydenis/rea/commit/1dc97d8cece2eb68c0e72feb56c7a2821f23237c))
@@ -835,6 +842,7 @@
 * preserve address context resource recovery ([#8424](https://github.com/attydenis/rea/issues/8424)) ([106ba17](https://github.com/attydenis/rea/commit/106ba1730f71f9d0f3d82c87668b77279db4287f))
 * preserve feature traces when owner lookup is unavailable ([#8368](https://github.com/attydenis/rea/issues/8368)) ([6e9ee97](https://github.com/attydenis/rea/commit/6e9ee97a69cb16c7150d8b550e705cba055ee4f0))
 * preserve nullable source-map facts and streamline model tests ([#8018](https://github.com/attydenis/rea/issues/8018)) ([b3d31ed](https://github.com/attydenis/rea/commit/b3d31ed106c6f3baef1dc778ea688c23323879ba))
+* preserve results when source publication fails ([#8444](https://github.com/attydenis/rea/issues/8444)) ([88cf498](https://github.com/attydenis/rea/commit/88cf498036d85f639a74a82376f08b2704d25b39))
 * preserve source closure during snapshot replay ([#8870](https://github.com/attydenis/rea/issues/8870)) ([441ba94](https://github.com/attydenis/rea/commit/441ba94086e899f8e8bb159fea2bd8cee617a019))
 * **process:** await Swift frontend lifetime pipe ([#7948](https://github.com/attydenis/rea/issues/7948)) ([c92322b](https://github.com/attydenis/rea/commit/c92322b473742628eecb4d13bd467a195fa3126e))
 * **process:** classify withheld Darwin environments before parser failures ([26b033d](https://github.com/attydenis/rea/commit/26b033d51fd627af0cfdf47efcbdb346484e1c85))
@@ -1045,6 +1053,7 @@
 * **test:** bind deferred runtime calls to advertised schemas ([#8622](https://github.com/attydenis/rea/issues/8622)) ([8250bf2](https://github.com/attydenis/rea/commit/8250bf2320ea57aab4e664db4b4d44b8abd2004e))
 * **tests:** reuse bounded CLI workers for native matching errors ([#9163](https://github.com/attydenis/rea/issues/9163)) ([98c589e](https://github.com/attydenis/rea/commit/98c589e42019b4cc2c3c6aee1f6d2031e2de2441))
 * **tests:** reuse bounded CLI workers in mobile archive checks ([#9116](https://github.com/attydenis/rea/issues/9116)) ([afc9cfe](https://github.com/attydenis/rea/commit/afc9cfe9ff63c5ccef2d0a6f6c71d1d26281d431))
+* **tests:** reuse CLI sessions in Electron call-path regressions ([#9335](https://github.com/attydenis/rea/issues/9335)) ([72d5e72](https://github.com/attydenis/rea/commit/72d5e72e6d7b7997c4ecb11972fc405be8ec67d2))
 
 
 ### Code Refactoring
@@ -1255,6 +1264,7 @@
 * scope performance measurements to concrete needs ([90b793e](https://github.com/attydenis/rea/commit/90b793e0f488be73a3e98ba430bcb132ad8b0c31))
 * **search:** clarify provider case folding ([86d4a21](https://github.com/attydenis/rea/commit/86d4a21215cb0fbafaf555b5c7d9fcda3f255d82))
 * **security:** add fallback reporting email ([3b26d7f](https://github.com/attydenis/rea/commit/3b26d7f80b6bfa5d46c6a3817b949cb6924593f5))
+* **security:** define REA threat model and security properties ([#9384](https://github.com/attydenis/rea/issues/9384)) ([559083b](https://github.com/attydenis/rea/commit/559083be29bd8502a7feefcbe981380b2bbf4cd9))
 * **setup:** clarify Hopper failures and installer verification ([3842809](https://github.com/attydenis/rea/commit/3842809c371a59609f576a9db8f9c492a3f071e6))
 * **setup:** describe FreeBuff as published setup support ([#7246](https://github.com/attydenis/rea/issues/7246)) ([4910e14](https://github.com/attydenis/rea/commit/4910e149ad9b2d8e3c3d0be62332b633ac418889))
 * **setup:** restore target and Hopper launch settings ([#7902](https://github.com/attydenis/rea/issues/7902)) ([539a494](https://github.com/attydenis/rea/commit/539a494d25df3dc68e8d7bbadeea7edb527c4884))
@@ -1308,6 +1318,7 @@
 * **firmware:** cover S-record high address workflows ([#8897](https://github.com/attydenis/rea/issues/8897)) ([25b62db](https://github.com/attydenis/rea/commit/25b62db838bca5305ef540ae33980778b0918017))
 * **firmware:** keep producer fixtures within supported Node limits ([#7048](https://github.com/attydenis/rea/issues/7048)) ([b75419b](https://github.com/attydenis/rea/commit/b75419b61e2e11760993b3e60046633e2532cbc4))
 * **firmware:** pin the staging ceiling at the request boundary ([#7775](https://github.com/attydenis/rea/issues/7775)) ([4671947](https://github.com/attydenis/rea/commit/4671947c97bb661b3507b7691f57227a2757a44f))
+* focus diagnostics and evidence checks on behavior ([#9303](https://github.com/attydenis/rea/issues/9303)) ([5044e20](https://github.com/attydenis/rea/commit/5044e20171564d201d5fe49c18e2ea6f90c53010))
 * **gdb:** expect configurable stream truncation diagnostics ([#8965](https://github.com/attydenis/rea/issues/8965)) ([ce07d35](https://github.com/attydenis/rea/commit/ce07d358cdaa3d3f69711d71d1d9e03106b12dbe))
 * **ghidra:** check regex recovery at its owning boundary ([#8578](https://github.com/attydenis/rea/issues/8578)) ([2be2d00](https://github.com/attydenis/rea/commit/2be2d006b8d4f949dfc58c6952b04d5ba70bd9c0))
 * **ghidra:** check retained historical snapshot evidence ([#8381](https://github.com/attydenis/rea/issues/8381)) ([0aaa582](https://github.com/attydenis/rea/commit/0aaa5829777d34b988dec955d2a6a0a894e92be1))
